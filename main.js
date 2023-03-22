@@ -4,25 +4,25 @@ console.log("Script attached");
 // Select Node #1 and change the text to: "I used the getElementById("node1") method to access this"
 document.getElementById("node1").textContent = "I used the getElementById('node1') method to access this.";
 // Select Node #2 and change the text to: "I used the getElementByClassName("node2") method to access this" */
-const ex2 = document.getElementsByClassName("node2");
+let ex2 = document.getElementsByClassName("node2");
 for (let i = 0; i < ex2.length; i++){
     ex2[i].textContent = "I used the getElementByClassName('node2') method to access this.";
 };
 // Select ALL the h3 tags and change the text to: "I used the getElementByTagName("h3") method to access all of these" */
-const h3Tags = document.getElementsByTagName("h3");
+let h3Tags = document.getElementsByTagName("h3");
 for (let i = 0; i < h3Tags.length; i++){
     h3Tags[i].textContent = "I used the getElementByTagName('h3') method to access all of these.";
 };
 /*----------- Exercise #2: CREATING/APPENDING/INSERTING ELEMENTS/OBJECTS -----------*/
 
 // TODO: Create a paragraph element using this document.createElement() and put this text inside "This node was created using the createElement() method"
-const p1 = document.createElement("p");
+let p1 = document.createElement("p");
 p1.textContent = "This node was created using the createElement() method."
 // TODO: Append the created node to the parent node using the element.appendChild() method
-const par1 = document.querySelector("#parent");
+let par1 = document.querySelector("#parent");
 par1.appendChild(p1);
 // TODO: Create a <a> element using this document.createElement() and put this text inside "I am a <a> tag"
-const a1 = document.createElement("a");
+let a1 = document.createElement("a");
 a1.textContent = "I am a <a> tag.";
 // BONUS: Add a link href to the <a>
 a1.href = "https://truecoders.io";
@@ -32,9 +32,18 @@ par1.insertBefore(a1, p1);
 /*----------- Exercise #3: REMOVING/REPLACING ELEMENTS/OBJECTS -----------*/
 
 // TODO: Replace the "Child Node" with a new <p> element that reads "New Child Node"
+let nodeSel = document.querySelector("#N1");
+let p2 = document.createElement("p");
+let par2 = document.querySelector("#exercise-container3");
+p2.textContent = "New Child Node";
 
+par2.replaceChild(p2, nodeSel);
 // TODO: Remove the "New Child Node"
 
+setTimeout(()=> {
+    par2.removeChild(p2, nodeSel);
+},3000);
+// setTimeout() - runs a function after a certain number of milliseconds
 /*----------- Exercise #4: LIST ITEMS ----------- */
 // Use the following array of values to generate a list on the DOM
 
